@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+#if the url request a file then do nothing
+RewriteCond %{REQUEST_FILENAME}  !-f
+#if the url is not a file then place the url in a query and go to the index.php file
+RewriteRule ^(.*)$ index.php?url=$1 [PT,L]
+
+</IfModule>
